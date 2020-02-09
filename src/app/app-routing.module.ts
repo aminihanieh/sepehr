@@ -7,7 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 const routes: Routes = [
   { path:  '', redirectTo:'fa/flight/airports' , pathMatch: 'prefix'},
   { path:  'fa/flight/airports', component:  AirportsComponent},
-  { path:  'fa/flight/airports/:id', component:  DetailComponent}
+  { path:  'fa/flight/airports/detail/:id', component:  DetailComponent}
 
 ];
 

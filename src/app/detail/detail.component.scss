@@ -1,0 +1,15 @@
+@import '../../assets/scss/_help/color';
+
+.firstRow{ 
+    background: $bgGray;
+   height: 50px;
+   box-shadow: 0 4px 2px -2px $borderColor;
+   -webkit-box-shadow: 0 4px 2px -2px $borderColor;
+   h3{
+    margin: 0;
+    font-size: 18px;
+    color: $fontGray;
+    font-weight: 700;
+    line-height: 50px;
+   }
+}

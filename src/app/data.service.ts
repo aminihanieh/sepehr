@@ -9,6 +9,10 @@ export class DataService {
 
   constructor() {}
 
+  filterById(m){
+    return data.filter(e => e.id === +m);
+      }
+
   filterByCity(s){
     return data.filter(e => e.city.includes(s) || e.airport.includes(s));
 
@@ -21,7 +25,7 @@ export class DataService {
 
 let data = [
   {
-    id: 1,
+    id:1,
     city: 'تهران',
     airport: 'امام خمینی',
     phone: '051-33400001',

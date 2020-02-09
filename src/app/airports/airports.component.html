@@ -34,7 +34,7 @@
 
     <div class="row" *ngIf="airportData">
       <div class=" col-lg-2" *ngFor="let data of airportData">
-        <div class="card text-center" [routerLink]="[data.city]" [queryParams]="[ data.airport]">
+        <div class="card text-center" [routerLink]="['detail' , data.id ]" >
           <span class="city pb-1">{{data.city}}</span>
           <span class="airport pt-1" *ngIf="data.airport !== '_'">{{data.airport}}</span>
 
