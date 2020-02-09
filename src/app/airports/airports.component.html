@@ -1,0 +1,51 @@
+<body>
+  <div class="row firstRow">
+    <div class="container">
+      <div class=" searchBox">
+
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="نام شهر یا فرودگاه مورد نظر خود را وارد کنید" class="form-control"
+          (keyup)='filterData($event)' [(ngModel)]="filterWord">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+
+    <div class="row tehran">
+      <div class=" col-lg-2">
+        <div class="card text-center">
+          <span class="city pb-1">{{tehranAirport.city}}</span>
+          <span class="airport pt-1">{{tehranAirport.airport}}</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="title">
+      <h5>
+        اطلاعات پرواز سایر فرودگاه های کشور
+      </h5>
+    </div>
+
+    <div class="alert alert-primary" role="alert" *ngIf='airportData.length === 0'>
+      موردی یافت نشد </div>
+
+    <div class="row" *ngIf="airportData">
+      <div class=" col-lg-2" *ngFor="let data of airportData">
+        <div class="card text-center" [routerLink]="[data.city]" [queryParams]="[ data.airport]">
+          <span class="city pb-1">{{data.city}}</span>
+          <span class="airport pt-1" *ngIf="data.airport !== '_'">{{data.airport}}</span>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+</body>

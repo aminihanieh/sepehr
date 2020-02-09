@@ -1,0 +1,22 @@
+@font-face {
+font-family:'sans';
+src:url('IRANSansLight.woff') format('woff'),
+	url('IRANSansLight.eot') format('eot'),
+	url('iransans.eot?#iefix') format('embedded-opentype'),
+    url('IRANSansLight.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+	font-variant:normal;
+}
+/* @font-face {
+font-family:'sansBold';
+src:url('IRANSansMedium.woff') format('woff'),
+	url('IRANSansMedium.eot') format('eot'),
+	url('IRANSansMedium.eot?#iefix') format('embedded-opentype'),
+    url('IRANSansMedium.ttf') format('truetype');
+	font-weight:bold;
+} */
+
+body {
+	font-family: sans;
+}

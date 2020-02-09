@@ -1,0 +1,88 @@
+@import "../../../assets/scss/_help/color";
+
+
+
+.footer {
+  width: 100%;
+  padding: 1rem 0 0;
+      background: $lightGray;
+      overflow: hidden;
+
+
+  .linksArea {
+    h5{
+        color:$purple;
+        font: normal 500 14px/12px sans;
+    }
+    ul{
+        padding-right: 1rem;
+        li{          
+                  font: normal 600 12px/24px sans;
+                  &::before {
+                    content: "\2022";
+                    font-size: 16px;
+                    color: $purple;
+                    font-weight: bold;
+                    display: inline-block; 
+                    width: 1em;
+                    margin-right: -1em;
+                  }
+
+            a{
+                color: $fontBlack ;
+                &:hover{
+
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .pictureLinks{
+
+        .cardLink{
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+            width: 100px;
+            height: 85px;
+             cursor: pointer;
+            margin: 3px;
+            img{
+                width: 70%;
+            }
+           
+        }
+        
+    }
+  }
+
+  .socialArea {
+    background: $purple;
+    padding: 1rem;
+
+    ul {
+        margin: 0;
+      li {
+        a {
+            cursor: pointer;
+            
+          i {
+            color: white;
+            border: 1px solid white;
+            padding: 5px;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 38px;
+            height: 38px;
+          }
+        }
+      }
+    }
+  }
+}

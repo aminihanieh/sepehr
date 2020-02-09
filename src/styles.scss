@@ -1,0 +1,20 @@
+@import 'assets/fonts/font.css';
+@import 'assets/fonts/font-awesome/css/font-awesome.css';
+
+*{
+    font-family:sans ;
+    box-sizing: border-box;
+
+}
+
+body,html{
+    direction:rtl;
+    box-sizing: border-box;
+    text-align: right;
+    overflow-x: hidden; //horizontal
+}
+
+.noPad{
+    padding: 0;
+}
+

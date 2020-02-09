@@ -1,0 +1,61 @@
+@import '../../assets/scss/_help/color';
+
+.firstRow{ 
+   background: $bgGray;
+  height: 50px;
+  box-shadow: 0 4px 2px -2px $borderColor;
+  -webkit-box-shadow: 0 4px 2px -2px $borderColor;
+
+.searchBox{
+  display: flex;
+  padding: 10px;
+  width: 40%;
+  position: relative;
+  justify-content:start;
+  input{
+    width: 100%;
+    padding: 2px 5px;
+    padding-right:2rem;
+    height: 34px;
+    font-size: 12PX;
+    &:focus{
+      border: 1px solid lightblue;
+    }
+  }
+  i{
+    position: absolute;
+    top: 18px;
+    right: 1rem;
+    color: darkblue;
+  }
+}
+}
+.tehran{
+  margin-top: 50px;
+}
+.title{
+    margin: 40px 0 20px;
+    h5{
+      font-size: 16px;
+      color: $purple;
+      border-bottom: 1px solid $purple;
+    display: inline-block;}
+    }
+
+.card{
+    display: flex;
+    margin-bottom: 1rem;
+    border: 1px solid #774cb7;
+    height: 3rem;
+    align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  span{
+      width: 80%;
+      font-size: 12px;
+       & + span {
+        border-top: 1px solid $borderColor;
+       } 
+  }
+}
