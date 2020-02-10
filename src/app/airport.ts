@@ -1,6 +1,9 @@
 export interface IAirport {
-     id : string ,
-     city :  string ,
-     airport :   string ,
-       
+iataCode:string,
+   city:string,
+   airport:string,
+   phone:string,
+   website:string,
+   wikipedia:string,
+   picture:string
 }
