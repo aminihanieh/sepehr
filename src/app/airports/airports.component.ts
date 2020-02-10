@@ -12,7 +12,8 @@ filterWord;
   airportData =[];
   tehranAirport={
     city:'تهران',
-    airport:"مهرآباد"
+    airport:"مهرآباد",
+    id:'THR'
   } ;
 
   ngOnInit(): void {

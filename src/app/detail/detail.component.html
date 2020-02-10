@@ -4,9 +4,8 @@
       <!-- <h3>{{airportData|json}}</h3> -->
       <span>{{airportData.city}}</span>
       <span>/فرودگاه </span>
+      <span>{{airportData.airport}}</span>
 
-      <span *ngIf="airportData.airport !== '_'">{{airportData.airport}}</span>
-      <span *ngIf="airportData.airport == '_'">{{airportData.city}}</span>
 
     </div>
 
@@ -87,7 +86,7 @@
   <div class="imgBox">
     <img src="../../assets/img/airports/{{airportData.picture}}"  class="img-fluid">
     <h4 class="imgTitle">
-      <span>فرودگاه</span>
+      <span>فرودگاه &nbsp;</span>
       <span>{{airportData.airport}} </span></h4>
     </div>
       <p>در صورت تمایل می توانید تصاویر این فرودگاه را از طریق تلگرام ارسال نمایید،
