@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service'
-import { DatabaseService } from '../database.service';
+import {DataService} from '../services/data.service'
+import { DatabaseService } from '../services/database.service';
 @Component({
   selector: 'app-airports',
   templateUrl: './airports.component.html',
