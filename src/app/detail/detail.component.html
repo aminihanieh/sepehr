@@ -1,11 +1,89 @@
+<body>
+  <div class="row firstRow">
+    <div class="container">
+      <!-- <h3>{{airportData|json}}</h3> -->
+      <span>{{airportData.city}}</span>
+      <span>/فرودگاه </span>
 
-  
-  <body>
-    <div class="row firstRow">
-        <div class="container">
-          <h3>{{airportData|json}}</h3>
-          <!-- <h3>تهر/.ان , امام خمینی</h3> -->
+      <span *ngIf="airportData.airport !== '_'">{{airportData.airport}}</span>
+      <span *ngIf="airportData.airport == '_'">{{airportData.city}}</span>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 detail">
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6 detailTitle">
+              <a href="#" class="">
+                <i class="fa fa-plane" aria-hidden="true"></i>
+                <span>مشاهده تابلوی پرواز ها</span>
+              </a>
+            </div>
+            
+          </div>
         </div>
-    
-      </div>      
-  </body>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6 detailTitle">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>مرکز تلفن:</span>
+            </div>
+            <div class="col-md-6 detailData">
+              <a >
+                <span>{{airportData.phone}}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6 detailTitle">
+              <i class="fa fa-circle-o" aria-hidden="true"></i>
+              <span>وب سایت:</span>
+            </div>
+                  <div class="col-md-6 detailData">
+            <a href="http://{{airportData.website}}" class="">
+              <span>{{airportData.website}}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6 detailTitle">
+              <i class="fa fa-wikipedia-w" aria-hidden="true"></i>
+              <span>ویکی پدیا:</span>
+            </div>
+          <div class="col-md-6 detailData">
+            <a href="{{airportData.wikipedia}}" class="">
+              <span>www.fa.wikipedia.org</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-6 detailTitle">
+              <a href="#" class="">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                <span>آب و هوای {{airportData.city}}</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 picture">
+
+      </div>
+    </div>
+  </div>
+</body>

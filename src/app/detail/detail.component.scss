@@ -1,15 +1,77 @@
 @import '../../assets/scss/_help/color';
 
-.firstRow{ 
-    background: $bgGray;
-   height: 50px;
-   box-shadow: 0 4px 2px -2px $borderColor;
-   -webkit-box-shadow: 0 4px 2px -2px $borderColor;
-   h3{
+.firstRow {
+  background: $bgGray;
+  height: 50px;
+  box-shadow: 0 4px 2px -2px $borderColor;
+  -webkit-box-shadow: 0 4px 2px -2px $borderColor;
+
+  span {
     margin: 0;
     font-size: 18px;
     color: $fontGray;
     font-weight: 700;
     line-height: 50px;
-   }
+    overflow: hidden;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+//   text-transform: uppercase;
+}
+
+i {
+  font-size: 24px;
+  color: #9a9a9a;
+  margin: 0 0 0 3rem;
+  width: 1rem;
+  vertical-align: text-bottom;
+}
+
+span {
+  font: normal 400 13px/12px sans;
+}
+
+.detail {
+    border-left: 1px solid $borderColor;
+    margin: 3rem 0;
+  .col-md-10 {
+    border-bottom: 1px solid $borderColor;
+    position: relative;
+    &::after {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 50%;
+    background-color: #774cb7;
+      }
+ 
+ 
+  .row {
+    align-items: center;
+
+    .col-md-6 {
+      padding: 10px 0;
+    }
+    
+
+    .detailTitle {
+      display: flex;
+      align-items: center;
+
+     
+    }
+    .detailData{
+        text-align: left;
+        padding-left: 10px;
+        font-size: 12px;
+    }
+  }
+}
+
 }

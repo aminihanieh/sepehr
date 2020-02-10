@@ -19,8 +19,9 @@ export class DetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
     this.selectedCity= params.get('id');
     });
-console.log(this.selectedCity);
-    this.airportData = this.service.filterById(this.selectedCity)
+    this.airportData = this.service.filterById(this.selectedCity);
+    console.log(this.airportData);
+
   }
 
 }
