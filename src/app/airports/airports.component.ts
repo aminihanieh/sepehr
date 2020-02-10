@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service'
+import { DatabaseService } from '../database.service';
 @Component({
   selector: 'app-airports',
   templateUrl: './airports.component.html',
@@ -7,19 +8,23 @@ import {DataService} from '../data.service'
 })
 export class AirportsComponent implements OnInit {
 
-  constructor(private dataService: DataService,) { }
-filterWord;
+  constructor(private dataService: DataService,private _dataBase: DatabaseService) { }
+  filterWord;
   airportData =[];
-  tehranAirport={
-    city:'تهران',
-    airport:"مهرآباد",
-    id:'THR'
-  } ;
 
-  ngOnInit(): void {
+  public database = [];
+  
+
+  selectedData;
+
+  ngOnInit(){
 
     this.airportData = this.dataService.getData();
+    this.selectedData = this.dataService.filterByIata('THR');
     // .filter(e => e.airport != this.tehranAirport.airport);
+
+    this._dataBase.getData()
+    .subscribe(e => this.database = e);
   
   }
 

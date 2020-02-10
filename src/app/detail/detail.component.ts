@@ -17,9 +17,11 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-    this.selectedCity= params.get('id');
+    this.selectedCity = params.get('iataCode');
+    console.log(params);
     });
-    this.airportData = this.service.filterById(this.selectedCity);
+
+    this.airportData = this.service.filterByIata(this.selectedCity);
     console.log(this.airportData);
 
   }

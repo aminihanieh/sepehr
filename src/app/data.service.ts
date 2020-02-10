@@ -9,8 +9,8 @@ export class DataService {
 
   constructor() {}
 
-  filterById(m){
-     let d = data.find(e => e.id === m);
+  filterByIata(m){
+     let d = data.find(e => e.iataCode == m);
 
      if(d.airport === '_') d.airport = d.city;
      if(d.picture === '_') d.picture = 'no-pic.jpg';
@@ -20,7 +20,7 @@ export class DataService {
       }
 
   filterByCity(s){
-    return data.filter(e => e.city.includes(s) || e.airport.includes(s));
+    return data.filter(e => e.city.includes(s) || e.airport.includes(s) || e.iataCode.includes(s));
 
       }
   getData(){
@@ -31,7 +31,7 @@ export class DataService {
 
 let data = [
   {
-    id:'AJS',
+    iataCode:'THR',
     city: 'تهران',
     airport: 'امام خمینی',
     phone: '051-33400001',
@@ -40,7 +40,7 @@ let data = [
     picture:'_'
   },
   {
-    id:'AZE',
+    iataCode:'THR',
     city: 'تهران',
     airport: 'مهرآباد',
     phone: '051-33400001',
@@ -49,7 +49,7 @@ let data = [
     picture:'pic (1).jpg'
   },
   {
-    id:'AZF',
+    iataCode:'THR',
     city: 'یزد',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -58,7 +58,7 @@ let data = [
     picture:'pic (6).jpg'
   },
   {
-    id:'GDX',
+    iataCode:'THR',
     city: 'اصفهان',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -67,7 +67,7 @@ let data = [
     picture:'pic (5).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'مشهد',
     airport: '_',
     phone: '051-33400001',
@@ -76,7 +76,7 @@ let data = [
     picture:'pic (4).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'شیراز',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -85,7 +85,7 @@ let data = [
     picture:'pic (3).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'یزد',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -94,7 +94,7 @@ let data = [
     picture:'pic (2).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'اصفهان',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -103,7 +103,7 @@ let data = [
     picture:'pic (1).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'مشهد',
     airport: "_",
     phone: '051-33400001',
@@ -112,7 +112,7 @@ let data = [
     picture:'pic (6).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'شیراز',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -121,7 +121,7 @@ let data = [
     picture:'pic (5).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'یزد',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -130,7 +130,7 @@ let data = [
     picture:'pic (4).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'اصفهان',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -139,7 +139,7 @@ let data = [
     picture:'pic (3).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'مشهد',
     airport: "_",
     phone: '051-33400001',
@@ -148,7 +148,7 @@ let data = [
     picture:'pic (2).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'شیراز',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -157,7 +157,7 @@ let data = [
     picture:'pic (1).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'یزد',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -166,7 +166,7 @@ let data = [
     picture:'pic (6).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'اصفهان',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -175,7 +175,7 @@ let data = [
     picture:'pic (5).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'مشهد',
     airport: "_",
     phone: '051-33400001',
@@ -184,7 +184,7 @@ let data = [
     picture:'pic (4).jpg'
   },
   {
-    id:'azd', 
+    iataCode:'THR',
     city: 'شیراز',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -193,7 +193,7 @@ let data = [
     picture:'pic (3).jpg'
   },
   {
-    id:'azd',
+    iataCode:'THR',
     city: 'یزد',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
@@ -202,7 +202,7 @@ let data = [
     picture:'pic (2).jpg'
   },
   {
-    id:'azd', 
+    iataCode:'THR',
     city: 'اصفهان',
     airport: ' هاشمی نژاد',
     phone: '051-33400001',
