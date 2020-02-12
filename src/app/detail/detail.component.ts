@@ -10,6 +10,7 @@ import { DataService } from '../services/data.service';
 export class DetailComponent implements OnInit {
   selectedCity;
   airportData;
+  
   constructor(private activatedRoute: ActivatedRoute , private service:DataService) {
    
     };

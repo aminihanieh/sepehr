@@ -3,9 +3,17 @@
 .header{
     background-color: $purple !important;
     height: 65px;
+    padding: 0 3%;
+    .navbar-toggler,.navbar-toggler:focus  { 
+         border: none;
+          }
+
     nav{
         padding: 0;
+    z-index: 20;
         ul{
+            background: $purple;
+            // width: 20%;
             li{
                 a{
                     color: white;
@@ -34,4 +42,11 @@
         }
     }
    
+}
+
+@media only screen and (max-width: 990px) {
+    .navbar-brand{
+        display:none;
+    }
+
 }

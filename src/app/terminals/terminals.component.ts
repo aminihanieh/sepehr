@@ -38,7 +38,10 @@ export class TerminalsComponent implements OnInit {
 
 filterData(e){
   this.wentFlightTerminals = this.data.filterByTerminal("wentFlightTerminals" ,this.selectedIata , e);  
-  this.backFlightTerminals = this.data.filterByTerminal("backFlightTerminals" ,this.selectedIata , e);  
+  console.log("TCL: TerminalsComponent -> filterData -> this.wentFlightTerminals", this.wentFlightTerminals)
+  this.backFlightTerminals = this.data.filterByTerminal("backFlightTerminals" ,this.selectedIata , e); 
+  console.log("TCL: TerminalsComponent -> filterData -> this.backFlightTerminals", this.backFlightTerminals)
+   
 } 
 
 
