@@ -18,4 +18,9 @@ export class DatabaseService {
     return this.http.get<IAirport[]>(this.localUrl);
   }
 
+  // filterByCity(s):Observable<IAirport[]>{
+  //   return this.http.get<IAirport[]>(this.localUrl).filter<IAirport[]>(e => e.city.includes(s) || e.airport.includes(s) || e.iataCode.includes(s));
+
+  //     }
+
 }
