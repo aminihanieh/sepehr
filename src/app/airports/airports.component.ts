@@ -21,10 +21,12 @@ export class AirportsComponent implements OnInit {
 
     this.airportData = this.dataService.getData();
     this.selectedData = this.dataService.filterByIata('THR');
+
+    console.log(this.airportData);
     // .filter(e => e.airport != this.tehranAirport.airport);
 
-    this._dataBase.getData()
-    .subscribe(e => this.database = e);
+    // this._dataBase.getData()
+    // .subscribe(e => this.database = e);
   
   }
 

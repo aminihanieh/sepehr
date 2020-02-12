@@ -10,6 +10,7 @@ import { HeaderComponent } from './share/header/header.component';
 import { FooterComponent } from './share/footer/footer.component';
 import { AirportsComponent } from './airports/airports.component';
 import { DetailComponent } from './detail/detail.component';
+import { TerminalsComponent } from './terminals/terminals.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DetailComponent } from './detail/detail.component';
     FooterComponent,
     AirportsComponent,
     DetailComponent,
+    TerminalsComponent,
   ],
   imports: [
     BrowserModule,
