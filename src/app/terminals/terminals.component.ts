@@ -37,8 +37,8 @@ export class TerminalsComponent implements OnInit {
 }
 
 filterData(e){
-  this.wentFlightTerminals = this.data.filterByTerminal(this.selectedIata , e);  
-  
+  this.wentFlightTerminals = this.data.filterByTerminal("wentFlightTerminals" ,this.selectedIata , e);  
+  this.backFlightTerminals = this.data.filterByTerminal("backFlightTerminals" ,this.selectedIata , e);  
 } 
 
 

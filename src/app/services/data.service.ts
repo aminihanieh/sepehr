@@ -33,10 +33,10 @@ export class DataService {
       }
 
 
-  filterByTerminal(iata , s){
+  filterByTerminal(status ,iata , s){
     var a = data.filter(e=> e.iataCode.includes(iata))[0];
     
-    return a['wentFlightTerminals'].filter(e => e['airline'].includes(s));
+    return a[status].filter(e => e['airline'].includes(s));
     
     // return data.filter(e => e.city.includes(s) || e.airport.includes(s) || e.iataCode.includes(s));
       }
@@ -70,33 +70,33 @@ let data = [
     picture:'pic (1).jpg',
     wentFlightTerminals:[
       {
-      airline:"زاگرس",
+      airline:"کارون",
       terminal:"1",
-      icon:"IR.svg"
+      icon:"IR.svg",
     },
     {
-      airline:"کیش ایر",
+      airline:"کاسپین",
       terminal:"2",
       icon:"Y9.svg"
 
     },
     {
-      airline:"وارش",
+      airline:"ماهان",
       terminal:"1",
       icon:"ZV.svg"
     },
     {
-      airline:"معراج",
+      airline:"آسمان",
       terminal:"3",
       icon:"VR.svg"
     } ,
     {
-      airline:"زاگرس",
+      airline:"سپهران",
       terminal:"1",
       icon:"Jl.svg"
     },
     {
-      airline:"کیش ایر",
+      airline:"پویا",
       terminal:"2",
       icon:"Jl.svg"
     },
@@ -111,7 +111,7 @@ let data = [
       icon:"Jl.svg"
     },
     {
-      airline:"زاگرس",
+      airline:"سپهران",
       terminal:"1",
       icon:"IR.svg"
     },
@@ -121,7 +121,7 @@ let data = [
       icon:"ZV.svg"
     },
     {
-      airline:"وارش",
+      airline:"سپهران",
       terminal:"1",
       icon:"IR.svg"
     },
