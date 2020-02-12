@@ -1,0 +1,89 @@
+@import '../../assets/scss/_help/color';
+
+.firstRow{ 
+  background: $bgGray;
+ height: 50px;
+ box-shadow: 0 4px 2px -2px $borderColor;
+ -webkit-box-shadow: 0 4px 2px -2px $borderColor;
+
+.searchBox{
+ display: flex;
+ padding: 10px;
+ width: 40%;
+ position: relative;
+ justify-content:start;
+ input{
+   width: 100%;
+   padding: 2px 5px;
+   padding-right:2rem;
+   height: 34px;
+   font-size: 12PX;
+   &:focus{
+     border: 1px solid lightblue;
+   }
+ }
+ i{
+   position: absolute;
+   top: 18px;
+   right: 1rem;
+   color: darkblue;
+ }
+}
+}
+.tableArea {
+  border: 1px $borderColor solid;
+  margin: 35px 0;
+  text-align: center;
+
+  .panelHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: $bgGray;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .tableHeader {
+    background: $purple;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+
+
+    .col-md-6 {
+      color: white;
+
+      &:first-child {
+        span {
+          border-left: white 1px solid;
+          padding-right: 2rem;
+
+        }
+      }
+
+      span {
+        width: 100%;
+        display: inline-block;
+        font-size: 13px;
+
+
+      }
+    }
+
+  }
+
+  .table {
+   margin: auto;
+   width: 95%;
+    td
+     {
+      text-align: center;
+      font-size: 13px;
+      width: 50%;
+    }
+  }
+}

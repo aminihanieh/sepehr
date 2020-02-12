@@ -9,20 +9,26 @@ export class DataService {
 
   constructor() {}
 
+  getXByIata(m,x){
+    let d = data.find(e => e.iataCode == m)
+    return d[x];
+     }
+
   filterByIata(m){
      let d = data.find(e => e.iataCode == m);
-
      if(d.airport === '_') d.airport = d.city;
      if(d.picture === '_') d.picture = 'no-pic.jpg';
-
      return d
-
       }
 
   filterByCity(s){
     return data.filter(e => e.city.includes(s) || e.airport.includes(s) || e.iataCode.includes(s));
-
       }
+
+    
+
+      
+
   getData(){
     return data;
   }
@@ -47,56 +53,132 @@ let data = [
     website: 'mashhad.airport.ir',
     wikipedia:"https://fa.wikipedia.org/wiki/%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87_%D8%A8%DB%8C%D9%86%E2%80%8C%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C_%D8%B4%D9%87%DB%8C%D8%AF_%D9%87%D8%A7%D8%B4%D9%85%DB%8C%E2%80%8C%D9%86%DA%98%D8%A7%D8%AF_%D9%85%D8%B4%D9%87%D8%AF",
     picture:'pic (1).jpg',
-    terminals:[
+    wentFlightTerminals:[
       {
       airline:"زاگرس",
-      terminal:"ترمینال1"
+      terminal:"1",
+      icon:"IR.svg"
     },
     {
       airline:"کیش ایر",
-      terminal:"ترمینال2"
+      terminal:"2",
+      icon:"Y9.svg"
+
     },
     {
       airline:"وارش",
-      terminal:"ترمینال1"
+      terminal:"1",
+      icon:"ZV.svg"
     },
     {
       airline:"معراج",
-      terminal:"ترمینال1"
+      terminal:"3",
+      icon:"VR.svg"
     } ,
     {
       airline:"زاگرس",
-      terminal:"ترمینال1"
+      terminal:"1",
+      icon:"Jl.svg"
     },
     {
       airline:"کیش ایر",
-      terminal:"ترمینال2"
+      terminal:"2",
+      icon:"Jl.svg"
     },
     {
       airline:"وارش",
-      terminal:"ترمینال1"
+      terminal:"1",
+      icon:"ZV.svg"
     },
     {
       airline:"معراج",
-      terminal:"ترمینال1"
+      terminal:"3",
+      icon:"Jl.svg"
     },
     {
       airline:"زاگرس",
-      terminal:"ترمینال1"
+      terminal:"1",
+      icon:"IR.svg"
     },
     {
       airline:"کیش ایر",
-      terminal:"ترمینال2"
+      terminal:"2",
+      icon:"ZV.svg"
     },
     {
       airline:"وارش",
-      terminal:"ترمینال1"
+      terminal:"1",
+      icon:"IR.svg"
     },
     {
       airline:"معراج",
-      terminal:"ترمینال1"
+      terminal:"3",
+      icon:"ZV.svg"
     }
-  ]
+  ],
+  backFlightTerminals:[
+    {
+    airline:"زاگرس",
+    terminal:"1",
+    icon:"IR.svg"
+  },
+  {
+    airline:"کیش ایر",
+    terminal:"2",
+    icon:"Y9.svg"
+
+  },
+  {
+    airline:"وارش",
+    terminal:"1",
+    icon:"ZV.svg"
+  },
+  {
+    airline:"معراج",
+    terminal:"3",
+    icon:"VR.svg"
+  } ,
+  {
+    airline:"زاگرس",
+    terminal:"1",
+    icon:"Jl.svg"
+  },
+  {
+    airline:"کیش ایر",
+    terminal:"2",
+    icon:"Jl.svg"
+  },
+  {
+    airline:"وارش",
+    terminal:"1",
+    icon:"ZV.svg"
+  },
+  {
+    airline:"معراج",
+    terminal:"3",
+    icon:"Jl.svg"
+  },
+  {
+    airline:"زاگرس",
+    terminal:"1",
+    icon:"IR.svg"
+  },
+  {
+    airline:"کیش ایر",
+    terminal:"2",
+    icon:"ZV.svg"
+  },
+  {
+    airline:"وارش",
+    terminal:"1",
+    icon:"IR.svg"
+  },
+  {
+    airline:"معراج",
+    terminal:"3",
+    icon:"ZV.svg"
+  }
+],
   },
   {
     iataCode:'CED',

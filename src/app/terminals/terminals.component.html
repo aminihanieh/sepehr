@@ -1,1 +1,92 @@
-<p>terminals works!</p>
+<body>
+  <div class="row firstRow">
+    <div class="container">
+      <div class=" searchBox">
+
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="نام شهر یا فرودگاه مورد نظر خود را وارد کنید" class="form-control"
+          [(ngModel)]="filterWord">
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    
+    <div class="container">
+      <div class="row">
+      <div class="col-md-6">
+          <div class="tableArea wentFlight">
+
+        <div class="panelHeader">            <img alt="ترمینال پروازهای برگشت" height="24" width="32" src="../../assets/img/icon/wentflights.png">
+          ترمینال پروازهای<span> رفت از {{airport}} </span>
+        </div>
+        <div class="tableHeader">
+                <div class="col-md-6 ">
+                  <span>
+                    ایرلاین
+
+                  </span>
+
+                </div>
+                <div class="col-md-6 noPad">
+                  <span>
+شماره ترمینال
+                  </span>               
+            </div>
+          </div>
+
+
+        <table class="table">
+
+          
+          <tbody>
+            <tr *ngFor="let data of wentFlightTerminals">
+              <td><img alt="لوگو ایرلاین های  فرودگاه مهرآباد" class="pl-1" height="24" width="24" src="../../assets/img/icon/{{data.icon}}">{{data.airline}}</td>
+              <td>ترمینال{{data.terminal}}</td>
+            </tr>
+           
+          </tbody>
+        </table>
+    </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="tableArea backFlight">
+      <div class="panelHeader">          <img alt="ترمینال پروازهای برگشت" height="24" width="32" src="../../assets/img/icon/backflights.png">
+        ترمینال پروازهای<span> برگشت به {{airport}} </span>
+      </div>
+      <div class="tableHeader">
+              <div class="col-md-6 ">
+                <span>
+                  ایرلاین
+
+                </span>
+
+              </div>
+              <div class="col-md-6">
+                <span>
+شماره ترمینال
+                </span>   
+                           </div>
+          </div>
+
+
+      <table class="table">
+
+        
+        <tbody>
+          <tr *ngFor="let data of backFlightTerminals">
+            <td><img alt="لوگو ایرلاین های  فرودگاه مهرآباد" class="pl-1" height="24" width="24" src="../../assets/img/icon/{{data.icon}}">{{data.airline}}</td>
+            <td>ترمینال{{data.terminal}}</td>
+
+          </tr>
+         
+        </tbody>
+      </table>
+  </div>
+
+    </div>
+    </div>
+  </div>
+  </div>
+</body>
