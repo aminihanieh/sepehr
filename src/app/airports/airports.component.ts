@@ -9,8 +9,7 @@ import { DatabaseService } from '../services/database.service';
 export class AirportsComponent implements OnInit {
 
   constructor(private dataService: DataService,private _dataBase: DatabaseService) { }
-  filterWord;
-  airportData =[];
+   airportData =[];
 
   public database = [];
   
@@ -23,17 +22,13 @@ export class AirportsComponent implements OnInit {
     this.selectedData = this.dataService.filterByIata('THR');
 
     console.log(this.airportData);
-    // .filter(e => e.airport != this.tehranAirport.airport);
-
-    // this._dataBase.getData()
-    // .subscribe(e => this.database = e);
+  
   
   }
 
-filterData(e){
-  this.airportData = this.dataService.filterByCity(this.filterWord);
-  // console.log(this.airportData);
-  // console.log(e);
+filterData( e){
+  this.airportData = this.dataService.filterByCity( e);
+ 
 } 
 
 log(){

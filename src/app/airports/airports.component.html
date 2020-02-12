@@ -8,7 +8,7 @@
 
         <i class="fa fa-search"></i>
         <input type="text" placeholder="نام شهر یا فرودگاه مورد نظر خود را وارد کنید" class="form-control"
-          (keyup)='filterData($event)' [(ngModel)]="filterWord">
+          (keyup)='filterData($event.target.value)'>
       </div>
     </div>
 

@@ -13,23 +13,33 @@ export class TerminalsComponent implements OnInit {
   wentFlightTerminals;
   backFlightTerminals;
 
+  terminals=[];
+
+  allData;
+
   filterWord;
+ 
 
   constructor(private data:DataService ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-      // this.allData = this.data.filterByIata(params.get('iataCode'));
+      this.allData = this.data.filterByIata(params.get('iataCode'));
       this.selectedIata = params.get('iataCode');
   })
 
-  this.airport = this.data.getXByIata(this.selectedIata , 'airport')
-  this.wentFlightTerminals = this.data.getXByIata(this.selectedIata , 'wentFlightTerminals')
+  this.airport = this.allData.airport;
+  this.wentFlightTerminals = this.allData.wentFlightTerminals
   .sort((a,b) =>    a.terminal > b.terminal ? 1 : -1 );
-  this.backFlightTerminals = this.data.getXByIata(this.selectedIata , 'backFlightTerminals')
+  this.backFlightTerminals = this.allData.backFlightTerminals
   .sort((a,b) =>    a.terminal > b.terminal ? 1 : -1 );
 
 }
+
+filterData(e){
+  this.wentFlightTerminals = this.data.filterByTerminal(this.selectedIata , e);  
+  
+} 
 
 
 }
