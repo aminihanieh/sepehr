@@ -10,6 +10,7 @@
         <input type="text" placeholder="نام شهر یا فرودگاه مورد نظر خود را وارد کنید" class="form-control"
           (keyup)='filterData($event.target.value)'>
       </div>
+      
     </div>
 
   </div>
@@ -19,9 +20,9 @@
 
     <div class="row tehran">
       <div class=" col-lg-2  col-md-3  col-sm-4 col-6">
-        <div class="card text-center" [routerLink]="['detail' , selectedData.iataCode ]">
-          <span class="city pb-1">{{selectedData.city}}</span>
-          <span class="airport pt-1">{{selectedData.airport}}</span>
+        <div class="card text-center" [routerLink]="['detail' , selectedData.iataCode]">
+          <span class="city pb-1">{{selectedData.cityName}}</span>
+          <span class="airport pt-1">{{selectedData.name}}</span>
         </div>
 
       </div>
@@ -39,8 +40,8 @@
       <div class=" col-lg-2  col-md-3  col-sm-4 col-6
        " *ngFor="let data of airportsData">
         <div class="card text-center" [routerLink]="['detail' , data.iataCode ]" >
-          <span class="city pb-1">{{data.city}}</span>
-          <span class="airport pt-1" *ngIf="data.airport !== '_'">{{data.airport}}</span>
+          <span class="city pb-1">{{data.cityName}}</span>
+          <span class="airport pt-1" *ngIf="data.cityName !== data.name">{{data.name}}</span>
 
         </div>
       </div>

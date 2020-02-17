@@ -11,11 +11,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DatabaseService {
-  private localUrl = '/assets/data/data.json';
+  private localUrl = 'https://api.sepehr360new.ir///fa/Api/IranAirportTitlesApi/Get?request=%7B%22commonClientServerData%22:null,%22deviceToken%22:%22%22,%22sessionId%22:%22%22,%22commonClientServerDataVersion%22:%22%22%7D';
   constructor(private http : HttpClient) { }
 
-  getData():Observable<IAirport[]>{
-    return this.http.get<IAirport[]>(this.localUrl);
+  getData():Observable<any[]>{
+    return this.http.get<any>(this.localUrl);
   }
 
   // filterByCity(s):Observable<IAirport[]>{

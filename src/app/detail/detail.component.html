@@ -2,9 +2,9 @@
   <div class="row firstRow">
     <div class="container">
       <!-- <h3>{{airportData|json}}</h3> -->
-      <span>{{airportData.city}}</span>
+      <span>{{airportData.cityName}}</span>
       <span>/فرودگاه </span>
-      <span>{{airportData.airport}}</span>
+      <span>{{airportData.name}}</span>
 
 
     </div>
@@ -17,7 +17,7 @@
         <div class="col-md-10">
           <div class="row">
             <div class="col-md-6 detailTitle">
-              <a href="#" class="">
+              <a href="#" >
                 <i class="fa fa-plane" aria-hidden="true"></i>
                 <span>مشاهده تابلوی پرواز ها</span>
               </a>
@@ -25,7 +25,7 @@
             
           </div>
         </div>
-        <div class="col-md-10" *ngIf="airportData.wentFlightTerminals">
+        <div class="col-md-10" *ngIf="airportData.hasAnyTerminal">
           <div class="row">
             <div class="col-md-6 detailTitle">
               <a href="#" [routerLink]="['../../terminals' , airportData.iataCode ]">
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-6 detailData">
               <a >
-                <span>{{airportData.phone}}</span>
+                <span>{{airportData.phoneNumber}}</span>
               </a>
             </div>
           </div>
@@ -56,8 +56,8 @@
               <span>وب سایت:</span>
             </div>
                   <div class="col-md-6 detailData">
-            <a href="http://{{airportData.website}}" class="">
-              <span>{{airportData.website}}</span>
+            <a href="{{airportData.websiteLink}}" >
+              <span>{{airportData.websiteLink}}</span>
             </a>
           </div>
 
@@ -71,7 +71,7 @@
               <span>ویکی پدیا:</span>
             </div>
           <div class="col-md-6 detailData">
-            <a href="{{airportData.wikipedia}}" class="">
+            <a href="{{airportData.wikipediaLink}}" >
               <span>www.fa.wikipedia.org</span>
             </a>
           </div>
@@ -82,9 +82,9 @@
         <div class="col-md-10">
           <div class="row">
             <div class="col-md-6 detailTitle">
-              <a href="#" class="">
+              <a href="{{airportData.cityWeatherLink}}" >
                 <i class="fa fa-sun-o" aria-hidden="true"></i>
-                <span>آب و هوای {{airportData.city}}</span>
+                <span>آب و هوای {{airportData.cityName}}</span>
               </a>
             </div>
           </div>
@@ -95,10 +95,10 @@
 <div class=" col-md-8 noPad">
   
   <div class="imgBox">
-    <img src="../../assets/img/airports/{{airportData.picture}}"  class="img-fluid">
+    <img src="https://api.sepehr360.ir/{{airportData.imageUrl}}"  class="img-fluid">
     <h4 class="imgTitle">
       <span>فرودگاه &nbsp;</span>
-      <span>{{airportData.airport}} </span></h4>
+      <span>{{airportData.name}} </span></h4>
     </div>
       <p>در صورت تمایل می توانید تصاویر این فرودگاه را از طریق تلگرام ارسال نمایید،
     تا به همراه نام شما در سایت نمایش داده شود.</p>

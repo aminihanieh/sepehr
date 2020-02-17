@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { ActivatedRoute } from '@angular/router';
+import { TerminalsService } from '../services/terminals.service';
+import { Terminals } from '../models/terminals.model';
 
 @Component({
   selector: 'app-terminals',
@@ -13,33 +15,40 @@ export class TerminalsComponent implements OnInit {
   wentFlightTerminals;
   backFlightTerminals;
 
-  terminals=[];
-
-  allData;
+ 
+  allData= new Terminals();
 
   filterWord;
  
 
-  constructor(private data:DataService ,private activatedRoute: ActivatedRoute) { }
+  constructor(
+     private _data:DataService ,
+     private _terminal:TerminalsService ,
+     private activatedRoute: ActivatedRoute) { 
+
+  }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-      this.allData = this.data.filterByIata(params.get('iataCode'));
+      // this.allData = this.data.filterByIata(params.get('iataCode'));
       this.selectedIata = params.get('iataCode');
+
+      this._terminal.getData(this.selectedIata).subscribe(r => console.log(r))
+
   })
 
-  this.airport = this.allData.airport;
-  this.wentFlightTerminals = this.allData.wentFlightTerminals
-  .sort((a,b) =>    a.terminal > b.terminal ? 1 : -1 );
-  this.backFlightTerminals = this.allData.backFlightTerminals
-  .sort((a,b) =>    a.terminal > b.terminal ? 1 : -1 );
+  // this.airport = this.allData.airlineName;
+  // this.wentFlightTerminals = this.allData.inboundFlightsTerminalName
+  // .sort((a,b) =>    a.terminal > b.terminal ? 1 : -1 );
+  // this.backFlightTerminals = this.allData.inboundFlightsTerminalName
+  // .sort((a,b) =>    a.terminal > b.terminal ? 1 : -1 );
 
 }
 
 filterData(e){
-  this.wentFlightTerminals = this.data.filterByTerminal("wentFlightTerminals" ,this.selectedIata , e);  
+  this.wentFlightTerminals = this._data.filterByTerminal("wentFlightTerminals" ,this.selectedIata , e);  
   console.log("TCL: TerminalsComponent -> filterData -> this.wentFlightTerminals", this.wentFlightTerminals)
-  this.backFlightTerminals = this.data.filterByTerminal("backFlightTerminals" ,this.selectedIata , e); 
+  this.backFlightTerminals = this._data.filterByTerminal("backFlightTerminals" ,this.selectedIata , e); 
   console.log("TCL: TerminalsComponent -> filterData -> this.backFlightTerminals", this.backFlightTerminals)
    
 } 
