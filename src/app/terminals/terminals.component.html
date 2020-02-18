@@ -1,11 +1,11 @@
 <body>
-  <div class="row firstRow">
+  <div class="row row--first">
     <div class="container">
-      <p class="">اطلاعات ترمینال های فرودگاه {{airport}}</p>
-      <div class=" searchBox">
+      <p class="">اطلاعات ترمینال های فرودگاه  {{airportData.name}}</p>
+      <div class=" search">
         <i class="fa fa-search"></i>
-        <input type="text" placeholder="نام ترمینال مورد نظر را وارد کنید" class="form-control"
-          (keyup)='filterData($event.target.value)'>
+        <input type="text" placeholder="نام ترمینال مورد نظر را وارد کنید" class="form-control" #input
+          (keyup)='filterData(input.value)'>
       </div>
     </div>
 
@@ -15,13 +15,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="tableArea wentFlight">
+          <div class="table-area">
 
-            <div class="panelHeader"> <img alt="ترمینال پروازهای برگشت" height="24" width="32"
+            <div class="table-area__header"> <img alt="ترمینال پروازهای برگشت" height="24" width="32"
                 src="../../assets/img/icon/wentflights.png">
-              ترمینال پروازهای<span> رفت از {{airport}} </span>
+              ترمینال پروازهای
+              <span> رفت از 
+                {{airportData.name}} </span>
             </div>
-            <div class="tableHeader">
+            <div class="table-area__title">
               <div class="col-md-6 ">
                 <span>
                   ایرلاین
@@ -29,7 +31,7 @@
                 </span>
 
               </div>
-              <div class="col-md-6 noPad">
+              <div class="col-md-6 no-pad">
                 <span>
                   شماره ترمینال
                 </span>
@@ -41,12 +43,11 @@
 
 
               <tbody>
-                <tr class=" " role="alert" *ngIf='wentFlightTerminals.length === 0'>
+                <tr class=" " role="alert" *ngIf='filteredData.length === 0'>
                   موردی یافت نشد </tr>
-                <tr *ngFor="let data of wentFlightTerminals">
-                  <td><img alt="لوگو ایرلاین های  فرودگاه مهرآباد" class="pl-1" height="24" width="24"
-                      src="../../assets/img/icon/{{data.icon}}">{{data.airline}}</td>
-                  <td>ترمینال{{data.terminal}}</td>
+                <tr *ngFor="let data of filteredData">
+                  <td><img alt="لوگو ایرلاین های  فرودگاه مهرآباد" class="pl-1 icon" height="24" width="24" src="https://cdn.sepehr360.ir/{{data.airlineLogoUrl}}">{{data.airlineName}}</td>
+                  <td>ترمینال{{data.outboundFlightsTerminalName}}</td>
                 </tr>
 
               </tbody>
@@ -55,12 +56,12 @@
 
         </div>
         <div class="col-md-6">
-          <div class="tableArea backFlight">
-            <div class="panelHeader"> <img alt="ترمینال پروازهای برگشت" height="24" width="32"
+          <div class="table-area">
+            <div class="table-area__header"> <img alt="ترمینال پروازهای برگشت" height="24" width="32"
                 src="../../assets/img/icon/backflights.png">
-              ترمینال پروازهای<span> برگشت به {{airport}} </span>
+              ترمینال پروازهای<span> برگشت به  {{airportData.name}} </span>
             </div>
-            <div class="tableHeader">
+            <div class="table-area__title">
               <div class="col-md-6 ">
                 <span>
                   ایرلاین
@@ -80,12 +81,11 @@
 
 
               <tbody>
-                <tr class=" " role="alert" *ngIf='backFlightTerminals.length === 0'>
+                <tr class=" " role="alert" *ngIf='filteredData.length === 0'>
                   موردی یافت نشد </tr>
-                <tr *ngFor="let data of backFlightTerminals">
-                  <td><img alt="لوگو ایرلاین های  فرودگاه مهرآباد" class="pl-1" height="24" width="24"
-                      src="../../assets/img/icon/{{data.icon}}">{{data.airline}}</td>
-                  <td>ترمینال{{data.terminal}}</td>
+                <tr *ngFor="let data of filteredData">
+                  <td><img alt="لوگو ایرلاین های  فرودگاه مهرآباد" class="pl-1 icon" height="24" width="24" src="https://cdn.sepehr360.ir/{{data.airlineLogoUrl}}">{{data.airlineName}}</td>
+                  <td>ترمینال{{data.inboundFlightsTerminalName}}</td>
 
                 </tr>
 

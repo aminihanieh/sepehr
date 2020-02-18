@@ -1,30 +1,21 @@
 
-
-
 <body>
-  <div class="row firstRow">
+  <div class="row row--first">
     <div class="container">
-      <div class=" searchBox">
-
+          <div class=" search">
         <i class="fa fa-search"></i>
-        <input type="text" placeholder="نام شهر یا فرودگاه مورد نظر خود را وارد کنید" class="form-control"
-          (keyup)='filterData($event.target.value)'>
+        <input type="text" placeholder="نام شهر یا فرودگاه مورد نظر خود را وارد کنید" class="form-control" #input
+          (keyup)='filterData(input.value)'>
       </div>
-      
-    </div>
-
+     </div>
   </div>
-
   <div class="container">
-
-
-    <div class="row tehran">
+    <div class="row selected-card">
       <div class=" col-lg-2  col-md-3  col-sm-4 col-6">
-        <div class="card text-center" [routerLink]="['detail' , selectedData.iataCode]">
+        <div class="card text-center"  (click)='navigate(selectedData)' >
           <span class="city pb-1">{{selectedData.cityName}}</span>
           <span class="airport pt-1">{{selectedData.name}}</span>
         </div>
-
       </div>
     </div>
     <div class="title">
@@ -32,28 +23,15 @@
         اطلاعات پرواز سایر فرودگاه های کشور
       </h5>
     </div>
-
-    <div class="alert alert-primary" role="alert" *ngIf='airportsData.length === 0'>
+    <div class="alert alert-primary" role="alert" *ngIf='filteredData.length === 0'>
       موردی یافت نشد </div>
-
-    <div class="row" *ngIf="airportsData">
-      <div class=" col-lg-2  col-md-3  col-sm-4 col-6
-       " *ngFor="let data of airportsData">
-        <div class="card text-center" [routerLink]="['detail' , data.iataCode ]" >
+    <div class="row" *ngIf='filteredData.length > 0'>
+      <div class=" col-lg-2  col-md-3  col-sm-4 col-6 " *ngFor="let data of filteredData">
+        <div class="card text-center" (click)="navigate(data)" >
           <span class="city pb-1">{{data.cityName}}</span>
           <span class="airport pt-1" *ngIf="data.cityName !== data.name">{{data.name}}</span>
-
         </div>
       </div>
-
-
-
-
-    </div>
+   </div>
   </div>
-
-
-
-  <!-- <h5>{{database|json}}</h5> -->
-
 </body>

@@ -1,8 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Airports } from '../models/airports.model';
-import { ActivatedRoute } from '@angular/router';
 import { Terminals } from '../models/terminals.model';
 
 @Injectable({

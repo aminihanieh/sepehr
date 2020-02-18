@@ -1,12 +1,12 @@
 @import '../../assets/scss/_help/color';
 
-.firstRow{ 
+.row--first{ 
    background: $bgGray;
   height: 50px;
   box-shadow: 0 4px 2px -2px $borderColor;
   -webkit-box-shadow: 0 4px 2px -2px $borderColor;
 
-.searchBox{
+.search{
   display: flex;
   padding: 10px;
   width: 40%;
@@ -30,7 +30,7 @@
   }
 }
 }
-.tehran{
+.selected-card{
   margin-top: 50px;
 }
 .title{

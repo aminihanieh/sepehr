@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Airports, selectedAirports } from '../models/airports.model';
+import { Airports } from '../models/airports.model';
+import { selectedAirports } from '../models/selected-airports.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,5 @@ export class AirportsService {
   getSelectedData(s):Observable<selectedAirports[]>{
             return this.http.get<selectedAirports[]>("https://api.sepehr360new.ir///fa/Api/AirportInfoByIataCodeApi/Get?request=%7B%22commonClientServerData%22:null,%22deviceToken%22:%22%22,%22sessionId%22:%22%22,%22commonClientServerDataVersion%22:%22%22,%22iataCode%22:%22" +s+"%22%7D");
     }
-  
-  
-
+      
 }
