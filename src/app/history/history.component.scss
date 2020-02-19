@@ -28,25 +28,47 @@
   font-size: 16px;
   border-bottom: 2px solid transparent;
 
-
   &:hover {
     border-bottom: 2px solid $purple;
     color: $purple;
   }
 }
 
-.list-item--active{
-    border-bottom: 2px solid $purple;
+.list-item--active {
+  border-bottom: 2px solid $purple;
+  color: $purple;
+}
+
+.history-nodata-title {
+  text-align: center;
+  margin: 3.5rem 0 3rem;
+
+  h3 {
+    font-size: 22px;
     color: $purple;
+  }
 }
 
-.history-nodata-title{
- text-align: center;
+.history-nodata-caption {
+  width: 70%;
+  border: 1px solid #ddd;
+  padding: 30px;
+  margin: 50px auto;
+  border-radius: 7px;
 }
 
-.history-nodata-caption{
-margin: 20px auto;
-border: 1px solid $borderColor;
-width: 60%;
-padding: 20px;
-border-radius: 5px;}
+.caption-item{
+  line-height: 2;
+  margin: 13px 0;
+  list-style-image: url(../../assets/img/icon/bullet.png);
+  padding-right: 7px;
+}
+
+.foot-note{
+font-size: 13px;
+margin-top: 20px;
+}
+.call-link{
+  color: blue;
+  cursor: pointer;
+}

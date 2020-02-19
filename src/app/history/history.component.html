@@ -2,7 +2,7 @@
   <div class="container">
     <div class="list-area">
       <ul class="list">
-        <li class="list-item" *ngFor="let i of months" (click)='selectedMonth = i.monthId'
+        <li class="list-item" *ngFor="let i of months" (click)='clicked(i)'
           [ngClass]="{'list-item--active': selectedMonth === i.monthId}">
           {{i.monthName}}
         </li>
@@ -11,7 +11,8 @@
 
     <div class="history">
       <div class="history-card">
-        <div class="history-nodata" *ngIf="!historyData">
+        <!-- <button class="button" (click)="log()">dxfdsfsd</button> -->
+        <div class="history-nodata" *ngIf="historyData.length === 0">
             <div class="history-nodata-title">
                 <h3>
                     هیچ سابقه ای از بازدیدهای شما در این ماه وجود ندارد.
@@ -20,30 +21,39 @@
             </div>
             <div class="history-nodata-caption">
                 <ul>
-                    <li>
+                    <li class="caption-item" >
                         احتمالا شما در زمان خرید بلیت ، از این دستگاه (موبایل ، کامپیوتر و یا تبلت) استفاده نکرده اید.
 
                     </li>
-                    <li>
+                    <li class="caption-item">
                         ممکن است شما از مرورگر دیگری(گوگل کروم ، فایرفاکس و ...) برای خرید بلیت استفاده کرده باشید.
 
                     </li>
-                    <li>
+                    <li class="caption-item">
                         ممکن است شما کوکی های مرورگر خود را پاک کرده باشید.
 
                     </li>
-                    <li>
+                    <li class="caption-item">
                         شما همه ی بازدید های این ماه را از مرورگر خود حذف کرده اید.
 
                     </li>
 
-                    <span>در صورتی که برای یافتن سوابق بازدید خودنیاز به کمک دارید، حتما با ما تماس بگیرید.
-
-                    </span>
+                    <p class="foot-note"> در صورتی که برای یافتن سوابق بازدید خودنیاز به کمک دارید، حتما با ما <a  class="call-link">تماس</a> بگیرید. </p>
                 </ul>
             </div>
-
+            
         </div>
+        <div class="history-detail">
+          <div class="history-detail-monthly">
+            <h3></h3>
+              <div class="detail-card" >
+
+              </div>
+             
+
+          </div>
+      </div>
+      
       </div>
     </div>
   </div>
