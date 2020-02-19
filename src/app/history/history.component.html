@@ -2,7 +2,7 @@
   <div class="container">
     <div class="list-area">
       <ul class="list">
-        <li class="list-item" *ngFor="let i of months" (click)='clicked(i)'
+        <li class="list-item" *ngFor="let i of months" (click)='clicked(i.monthId)'
           [ngClass]="{'list-item--active': selectedMonth === i.monthId}">
           {{i.monthName}}
         </li>
@@ -11,49 +11,76 @@
 
     <div class="history">
       <div class="history-card">
-        <!-- <button class="button" (click)="log()">dxfdsfsd</button> -->
-        <div class="history-nodata" *ngIf="historyData.length === 0">
-            <div class="history-nodata-title">
-                <h3>
-                    هیچ سابقه ای از بازدیدهای شما در این ماه وجود ندارد.
-                    
-                </h3>
-            </div>
-            <div class="history-nodata-caption">
-                <ul>
-                    <li class="caption-item" >
-                        احتمالا شما در زمان خرید بلیت ، از این دستگاه (موبایل ، کامپیوتر و یا تبلت) استفاده نکرده اید.
+        <div class="history-nodata" *ngIf="historyData[id].length === 0">
+          <div class="history-nodata-title">
+            <h3>
+              هیچ سابقه ای از بازدیدهای شما در این ماه وجود ندارد.
 
-                    </li>
-                    <li class="caption-item">
-                        ممکن است شما از مرورگر دیگری(گوگل کروم ، فایرفاکس و ...) برای خرید بلیت استفاده کرده باشید.
+            </h3>
+          </div>
+          <div class="history-nodata-caption">
+            <ul>
+              <li class="caption-item">
+                احتمالا شما در زمان خرید بلیت ، از این دستگاه (موبایل ، کامپیوتر و یا تبلت) استفاده نکرده اید.
 
-                    </li>
-                    <li class="caption-item">
-                        ممکن است شما کوکی های مرورگر خود را پاک کرده باشید.
+              </li>
+              <li class="caption-item">
+                ممکن است شما از مرورگر دیگری(گوگل کروم ، فایرفاکس و ...) برای خرید بلیت استفاده کرده باشید.
 
-                    </li>
-                    <li class="caption-item">
-                        شما همه ی بازدید های این ماه را از مرورگر خود حذف کرده اید.
+              </li>
+              <li class="caption-item">
+                ممکن است شما کوکی های مرورگر خود را پاک کرده باشید.
 
-                    </li>
+              </li>
+              <li class="caption-item">
+                شما همه ی بازدید های این ماه را از مرورگر خود حذف کرده اید.
 
-                    <p class="foot-note"> در صورتی که برای یافتن سوابق بازدید خودنیاز به کمک دارید، حتما با ما <a  class="call-link">تماس</a> بگیرید. </p>
-                </ul>
-            </div>
-            
+              </li>
+
+              <p class="foot-note"> در صورتی که برای یافتن سوابق بازدید خودنیاز به کمک دارید، حتما با ما <a
+                  class="call-link">تماس</a> بگیرید. </p>
+            </ul>
+          </div>
+
         </div>
         <div class="history-detail">
-          <div class="history-detail-monthly">
-            <h3></h3>
-              <div class="detail-card" >
+          <div class="history-detail-monthly" *ngFor="let history of historyData[id]">
 
+            <h6 class="history-date">{{history.searchDate}}</h6>
+            <div class="detail-container">
+
+              <div class="detail-card " *ngFor="let data of history.userActionLogList">
+                <div class="right "><img src="https://cdn.sepehr360new.ir/{{data.supplierLogo}}" alt="pic"
+                    class="img-fluid"></div>
+                <div class="center  col-md-8">
+                  <h6 class="agency-name">{{data.agencyName}}</h6>
+                  <p class="agancy-address"><span>{{data.cityName}}</span>
+                    {{data.postalAddress|limitTo : 30 }}
+
+                  </p>
+                  <p class="other-detail">
+                    <span> {{data.sourceCity}} به {{data.destinationCity}}،</span>
+                    <span> {{data.flightDate}}،</span>
+                    <span> {{data.airlineName}} </span>
+                    <span>{{data.flightTime}}،</span>
+                    <span>{{data.cabinType | toFarsi}}</span>
+                  </p>
+
+                </div>
+                <div class="left col-md-2"> 
+                  <div class="delete">
+                    <span>{{data.searchTime}}</span>
+                    <img src="../../assets/img/icon/delete.png" alt="">
+                  </div>
+                  <div class="ip">ip:{{data.ip}}</div>
+                </div>
               </div>
-             
+
+            </div>
 
           </div>
-      </div>
-      
+        </div>
+
       </div>
     </div>
   </div>

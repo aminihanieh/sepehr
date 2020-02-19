@@ -11,8 +11,16 @@ import { HistoryData } from '../models/history-data.model';
 })
 export class HistoryComponent implements OnInit {
    public months:Month[] = new Array<Month>();
-   public historyData:HistoryData[]= new Array<HistoryData>() ;
+   public historyData=[
+     new Array<HistoryData>(),
+     new Array<HistoryData>(),
+     new Array<HistoryData>()
+   ]
+  
    public selectedMonth:number = 0 ;
+   public id:number=0 ; 
+
+
   constructor(private _month : GetMonthService , private _monthlyData :MonthlyHistoryService) { }
 
   ngOnInit(): void {
@@ -22,16 +30,15 @@ export class HistoryComponent implements OnInit {
 
 
   clicked(i){
-    this.selectedMonth = i.monthId;
-    this.getData(this.selectedMonth)
-    }
+    this.selectedMonth = i;
+    this.id = Math.abs(this.selectedMonth) ;
+        if(this.historyData[Math.abs(i)].length === 0) this.getData(i) ; 
+      }
 
   getData(monthId){
-    this._monthlyData.getData(monthId).subscribe(data => console.log(data))
-
+    
+    this._monthlyData.getData(monthId).subscribe(data => this.historyData[Math.abs(monthId)]=data)
   }
-  // log(){
-  //   console.log( this.historyData);
-  // }
+
 
 }

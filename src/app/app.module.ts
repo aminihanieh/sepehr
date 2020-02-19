@@ -12,6 +12,8 @@ import { AirportsComponent } from './airports/airports.component';
 import { DetailComponent } from './detail/detail.component';
 import { TerminalsComponent } from './terminals/terminals.component';
 import { HistoryComponent } from './history/history.component';
+import { LimitToPipe } from './pipes/limit-to.pipe';
+import { ToFarsiPipe } from './pipes/to-farsi.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HistoryComponent } from './history/history.component';
     DetailComponent,
     TerminalsComponent,
     HistoryComponent,
+    LimitToPipe,
+    ToFarsiPipe,
   ],
   imports: [
     BrowserModule,
