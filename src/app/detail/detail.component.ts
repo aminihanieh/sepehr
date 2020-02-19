@@ -11,7 +11,7 @@ import {  selectedAirports} from '../models/selected-airports.model';
 
 export class DetailComponent implements OnInit {
   private selectedData: string[];
-  private airportData = new selectedAirports();
+    public airportData = new selectedAirports();
   
 
   constructor(

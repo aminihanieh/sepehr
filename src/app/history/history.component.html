@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="container">
+    <div class="list-area">
+      <ul class="list">
+        <li class="list-item" *ngFor="let i of months" (click)='selectedMonth = i.monthId'
+          [ngClass]="{'list-item--active': selectedMonth === i.monthId}">
+          {{i.monthName}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="history">
+      <div class="history-card">
+        <div class="history-nodata" *ngIf="!historyData">
+            <div class="history-nodata-title">
+                <h3>
+                    هیچ سابقه ای از بازدیدهای شما در این ماه وجود ندارد.
+                    
+                </h3>
+            </div>
+            <div class="history-nodata-caption">
+                <ul>
+                    <li>
+                        احتمالا شما در زمان خرید بلیت ، از این دستگاه (موبایل ، کامپیوتر و یا تبلت) استفاده نکرده اید.
+
+                    </li>
+                    <li>
+                        ممکن است شما از مرورگر دیگری(گوگل کروم ، فایرفاکس و ...) برای خرید بلیت استفاده کرده باشید.
+
+                    </li>
+                    <li>
+                        ممکن است شما کوکی های مرورگر خود را پاک کرده باشید.
+
+                    </li>
+                    <li>
+                        شما همه ی بازدید های این ماه را از مرورگر خود حذف کرده اید.
+
+                    </li>
+
+                    <span>در صورتی که برای یافتن سوابق بازدید خودنیاز به کمک دارید، حتما با ما تماس بگیرید.
+
+                    </span>
+                </ul>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

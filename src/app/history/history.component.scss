@@ -1,0 +1,52 @@
+@import '../../assets/scss/_help/color';
+
+.list-area {
+  text-align: center;
+
+}
+
+.list {
+  display: flex;
+  width: 65%;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;
+  padding: 0;
+  border-bottom: 1px $borderColor solid;
+}
+
+.list-item {
+  text-decoration: none;
+  list-style: none;
+  margin: auto;
+  width: 33.33%;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  color: $fontGray;
+  font-size: 16px;
+  border-bottom: 2px solid transparent;
+
+
+  &:hover {
+    border-bottom: 2px solid $purple;
+    color: $purple;
+  }
+}
+
+.list-item--active{
+    border-bottom: 2px solid $purple;
+    color: $purple;
+}
+
+.history-nodata-title{
+ text-align: center;
+}
+
+.history-nodata-caption{
+margin: 20px auto;
+border: 1px solid $borderColor;
+width: 60%;
+padding: 20px;
+border-radius: 5px;}

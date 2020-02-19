@@ -14,20 +14,29 @@
         ul{
             background: $purple;
             // width: 20%;
-            li{
+            li{                
                 a{
                     color: white;
                     font: normal bold 14px/21px sans;
-                    padding: 1.1rem 0; 
+                    padding: 1.1rem 1rem; 
+                    margin: 0;
                     border-bottom: transparent 2px solid;
                     transition: border-bottom 0.3s ease;
                     &:hover{
                         border-bottom: white 2px solid;
                     }
-        
+                   
+                }
+                .active-link{
+                        border-bottom: white 2px solid;
+
                 }
                 & +li{
-                    margin-right: 3rem;
+                    a{
+
+                        padding-right: 1.5rem;
+                        padding-left: 1.5rem;
+                    }
                 }
                
               
