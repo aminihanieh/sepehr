@@ -13,6 +13,6 @@ export class TerminalsService{
 
   
   getData(s):Observable<Terminals[]>{
-    return this.http.get<Terminals[]>("https://api.sepehr360new.ir///fa/Api/AirportTerminalAirlineByAirportIataCodeApi/Get?request=%7B%22commonClientServerData%22:null,%22deviceToken%22:%22%22,%22sessionId%22:%22%22,%22commonClientServerDataVersion%22:%22%22,%22iataCode%22:%22" + s +"%22%7D");
+    return this.http.get<Terminals[]>("https://api82.sepehr360new.ir///fa/Api/AirportTerminalAirlineByAirportIataCodeApi/Get?request=%7B%22commonClientServerData%22:null,%22deviceToken%22:%22%22,%22sessionId%22:%22%22,%22commonClientServerDataVersion%22:%22%22,%22iataCode%22:%22" + s +"%22%7D");
   }
 }

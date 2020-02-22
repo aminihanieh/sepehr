@@ -13,13 +13,13 @@ export class MonthlyHistoryService {
 
   getData(id):Observable<HistoryData[]>{
     let params = new HttpParams().set("request", id.toString());
-    return this._http.get<HistoryData[]>(`https://api.sepehr360new.ir//fa/Api/ShowUserActionLogApi/Get` , { responseType: "json", params: params, withCredentials: true })
+    return this._http.get<HistoryData[]>(`https://api82.sepehr360new.ir//fa/Api/ShowUserActionLogApi/Get` , { responseType: "json", params: params, withCredentials: true })
   }
 
 
   delete(id):Observable<any>{
     // let params = new HttpParams().set("request", id.toString());
  
-    return this._http.put<any>('https://api.sepehr360new.ir//fa/Api/DeleteUserActionLogApi/Submit' , {"commonClientServerData":null,"deviceToken":"","sessionId":"","commonClientServerDataVersion":"","id":id} )
+    return this._http.put<any>('https://api82.sepehr360new.ir//fa/Api/DeleteUserActionLogApi/Submit' , {"commonClientServerData":null,"deviceToken":"","sessionId":"","commonClientServerDataVersion":"","id":id} )
   }
 }

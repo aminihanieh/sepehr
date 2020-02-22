@@ -15,7 +15,7 @@ import {
   providedIn: 'root'
 })
 export class GetMonthService {
-  private url: string = 'https://api.sepehr360new.ir//fa/Api/ShowUserActionLogApi/GetRecentMonthList'
+  private url: string = 'https://api82.sepehr360new.ir//fa/Api/ShowUserActionLogApi/GetRecentMonthList'
 
   constructor(private _http: HttpClient) {}
 
