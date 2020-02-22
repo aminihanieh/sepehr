@@ -19,12 +19,12 @@ export class HistoryComponent implements OnInit {
   
    public selectedMonth:number = 0 ;
    public id:number=0 ; 
-
+   public noPost;
 
   constructor(private _month : GetMonthService , private _monthlyData :MonthlyHistoryService) { }
 
   ngOnInit(): void {
-    this._month.getMonth().subscribe(data => this.months = data)
+    this._month.getMonth().subscribe(data => {this.months = data})
     this.getData(this.selectedMonth);
     }
 
@@ -32,13 +32,23 @@ export class HistoryComponent implements OnInit {
   clicked(i){
     this.selectedMonth = i;
     this.id = Math.abs(this.selectedMonth) ;
-        if(this.historyData[Math.abs(i)].length === 0) this.getData(i) ; 
+        
+    if(this.historyData[this.id].length === 0) this.getData(i) ; 
+
       }
 
   getData(monthId){
-    
-    this._monthlyData.getData(monthId).subscribe(data => this.historyData[Math.abs(monthId)]=data)
+    this._monthlyData.getData(monthId).subscribe(data => this.historyData[Math.abs(monthId)]=data)}
+
+
+  delete( post){
+    let posts = this.historyData[Math.abs(this.id)][0].userActionLogList;
+
+    this._monthlyData.delete(post.logID).subscribe(deleted => {
+      let index = posts.indexOf(post);
+      posts.splice(index , 1)
+     }
+
+    )
   }
-
-
 }

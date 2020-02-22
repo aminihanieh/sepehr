@@ -43,34 +43,37 @@
           </div>
 
         </div>
-        <div class="history-detail">
+        <div class="history-detail" *ngIf="noPost != 0">
           <div class="history-detail-monthly" *ngFor="let history of historyData[id]">
 
             <h6 class="history-date">{{history.searchDate}}</h6>
             <div class="detail-container">
-
+              
               <div class="detail-card " *ngFor="let data of history.userActionLogList">
+                <div class="col-md-2">
                 <div class="right "><img src="https://cdn.sepehr360new.ir/{{data.supplierLogo}}" alt="pic"
-                    class="img-fluid"></div>
-                <div class="center  col-md-8">
-                  <h6 class="agency-name">{{data.agencyName}}</h6>
-                  <p class="agancy-address"><span>{{data.cityName}}</span>
-                    {{data.postalAddress|limitTo : 30 }}
-
-                  </p>
+      class="img-fluid"></div>
+    </div>
+      <div class="center  col-md-8">
+        <h6 class="agency-name">{{data.agencyName}}</h6>
+        <p class="agency-address"><span>{{data.cityName}}</span>
+          {{data.postalAddress|limitTo : 30 }}
+        </p>
                   <p class="other-detail">
                     <span> {{data.sourceCity}} به {{data.destinationCity}}،</span>
                     <span> {{data.flightDate}}،</span>
                     <span> {{data.airlineName}} </span>
                     <span>{{data.flightTime}}،</span>
                     <span>{{data.cabinType | toFarsi}}</span>
+                    <span>&nbsp; &nbsp;{{data.price}} تومان</span>
+
                   </p>
 
                 </div>
                 <div class="left col-md-2"> 
                   <div class="delete">
                     <span>{{data.searchTime}}</span>
-                    <img src="../../assets/img/icon/delete.png" alt="">
+                    <img src="../../assets/img/icon/delete.png" alt="" (click)='delete(data)'>
                   </div>
                   <div class="ip">ip:{{data.ip}}</div>
                 </div>
@@ -80,7 +83,7 @@
 
           </div>
         </div>
-
+<h5 *ngIf="noPost === 1">kljlllllllll</h5>
       </div>
     </div>
   </div>
