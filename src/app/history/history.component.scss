@@ -39,6 +39,7 @@
   color: $purple;
 }
 
+
 .history-date{
   padding-right: 30px;
     font-size: 14px;
@@ -162,4 +163,15 @@ span{
     left: 0;
     font-size: 13px;
     color: grey;
+}
+
+.all-deleted{
+  text-align: center;
+  h5{
+
+    margin: auto;
+    font-size: 22px;
+    color: $purple;
+    padding: 10px;
+  }
 }

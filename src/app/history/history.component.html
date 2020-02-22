@@ -11,7 +11,7 @@
 
     <div class="history">
       <div class="history-card">
-        <div class="history-nodata" *ngIf="historyData[id].length === 0">
+        <div class="history-nodata" *ngIf="historyData[id].length === 0 && !noHistory">
           <div class="history-nodata-title">
             <h3>
               هیچ سابقه ای از بازدیدهای شما در این ماه وجود ندارد.
@@ -43,7 +43,7 @@
           </div>
 
         </div>
-        <div class="history-detail" *ngIf="noPost != 0">
+        <div class="history-detail"*ngIf="!noHistory">
           <div class="history-detail-monthly" *ngFor="let history of historyData[id]">
 
             <h6 class="history-date">{{history.searchDate}}</h6>
@@ -83,7 +83,9 @@
 
           </div>
         </div>
-<h5 *ngIf="noPost === 1">kljlllllllll</h5>
+        <span  class="all-deleted" *ngIf="noHistory ">
+          <h5 >شما همه ی بازدید های این ماه را از مرورگر خود حذف کرده اید.</h5>
+        </span>
       </div>
     </div>
   </div>

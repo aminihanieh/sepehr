@@ -18,14 +18,14 @@ export class HistoryComponent implements OnInit {
    ]
   
    public selectedMonth:number = 0 ;
-   public id:number=0 ; 
-   public noPost;
+   public id:number= 0 ; 
+   public noHistory = false;
 
   constructor(private _month : GetMonthService , private _monthlyData :MonthlyHistoryService) { }
 
   ngOnInit(): void {
     this._month.getMonth().subscribe(data => {this.months = data})
-    this.getData(this.selectedMonth);
+    this.getData();
     }
 
 
@@ -33,20 +33,29 @@ export class HistoryComponent implements OnInit {
     this.selectedMonth = i;
     this.id = Math.abs(this.selectedMonth) ;
         
-    if(this.historyData[this.id].length === 0) this.getData(i) ; 
+    if(this.historyData[this.id].length === 0) this.getData() ; 
+    if(this.noHistory) this.noHistory  = false;
+    }
 
-      }
+  
 
-  getData(monthId){
-    this._monthlyData.getData(monthId).subscribe(data => this.historyData[Math.abs(monthId)]=data)}
+  getData(){
+    this._monthlyData.getData(this.selectedMonth).subscribe(data => this.historyData[this.id]=data)
+  }
 
 
-  delete( post){
-    let posts = this.historyData[Math.abs(this.id)][0].userActionLogList;
+  delete(post){
+    let histories = this.historyData[this.id][0].userActionLogList;
 
-    this._monthlyData.delete(post.logID).subscribe(deleted => {
-      let index = posts.indexOf(post);
-      posts.splice(index , 1)
+    this._monthlyData.delete(post.logID).subscribe(() => {
+      let index = histories.indexOf(post);
+      histories.splice(index , 1)
+
+      if(histories.length < 1)
+       {
+        this.noHistory = true; 
+        this.historyData[this.id].length = 0;
+      }  
      }
 
     )
